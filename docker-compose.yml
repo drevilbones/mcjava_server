@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    user: 1003:998
+    container_name: mcjava
+    restart: always
+    ports:
+      - "25565:25565"
+      - "8079:8079"
+    environment:
+      EULA: "true"
+      GAMEMODE: "survival"
+      TYPE: FABRIC
+      VERSION: 1.20.1
+      MODRINTH_PROJECTS: fabric-api, lithium, dynmap, luckperms
+      MODRINTH_DOWNLOAD_DEPENDENCIES: required
+      DIFFICULTY: "normal"
+      SERVER_NAME: "GAME NIGHT NEVER STOPS!"
+      USE_AIKAR_FLAGS: true
+      UID: 1003
+      GID: 998
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: stopitneverdoes
+      ENABLE_STATUS: "true"
+      MOTD: "STOPS NEVER NIGHT GAME!"
+      SNOOPER_ENABLED: "false"
+      MAX_PLAYERS: 10
+      WHITELIST: true
+      WHITELIST_FILE: whitelist.json
+      NETWORK_COMPRESSION_THRESHOLD: 64
+      VIEW_DISTANCE: 16
+      JVM_DD_OPTS: "java.net.preferIPv6Addresses=true"
+    volumes:
+      # local:container
+      - /opt/minecraft/data_java:/data
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
