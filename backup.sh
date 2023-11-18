@@ -17,7 +17,8 @@ sleep 5m
 mc_send "say §6Server going down for backups §4right now! Byebye!"
 sleep 5
 
-docker compose down
+#docker compose down
+mc_send "stop"
 
 cd $mc_data
 fname="mc_$(date +%s).tgz"

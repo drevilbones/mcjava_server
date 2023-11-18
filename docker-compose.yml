@@ -20,7 +20,7 @@ services:
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       DIFFICULTY: "normal"
       SERVER_NAME: "GAME NIGHT NEVER STOPS!"
-      MEMORY: 8G
+      MEMORY: 2G
       USE_AIKAR_FLAGS: true
       UID: 1003
       GID: 998
