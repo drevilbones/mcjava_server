@@ -2,5 +2,6 @@ mc_send () { sudo docker exec mcjava rcon-cli $1; }
 mc_rcon () { sudo docker exec -i mcjava rcon-cli; }
 mc_list () { sudo docker exec mcjava rcon-cli list; } 
 mc_att () { sudo docker attach mcjava; }
-# must be run from dir with the docker-compose.yml
+# the following must be run from dir with the docker-compose.yml
+mc_logs () { sudo docker compose logs -f; }
 mc_restart () { sudo docker compose down && sudo docker compose up -d && sudo docker attach mcjava; }
